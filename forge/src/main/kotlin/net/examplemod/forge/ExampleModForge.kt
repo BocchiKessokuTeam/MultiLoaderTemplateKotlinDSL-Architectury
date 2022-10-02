@@ -4,9 +4,10 @@ import dev.architectury.platform.forge.EventBuses
 import net.examplemod.ExampleMod
 import net.examplemod.ExampleMod.init
 import net.examplemod.forge.datagen.ChineseProvider
+import net.minecraftforge.data.event.GatherDataEvent
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent
+
 
 @Mod(ExampleMod.MOD_ID)
 class ExampleModForge {
@@ -17,7 +18,6 @@ class ExampleModForge {
         init()
     }
 
-    @Deprecated("", ReplaceWith("onGatherDataEvent()"))
     private fun onGatherData(event: GatherDataEvent) {
         val gen = event.generator
         gen.addProvider(true, ChineseProvider(gen))
