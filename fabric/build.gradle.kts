@@ -11,9 +11,7 @@ loom {
     accessWidenerPath.set(project(":common").loom.accessWidenerPath)
 }
 
-/**
- * @see: https://docs.gradle.org/current/userguide/migrating_from_groovy_to_kotlin_dsl.html
- * */
+
 val common: Configuration by configurations.creating
 val shadowCommon: Configuration by configurations.creating // Don't use shadow from the shadow plugin because we don't want IDEA to index this.
 val developmentFabric: Configuration = configurations.getByName("developmentFabric")

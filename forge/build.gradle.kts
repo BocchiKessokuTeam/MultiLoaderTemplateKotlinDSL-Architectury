@@ -36,7 +36,7 @@ dependencies {
     shadowCommon(project(":common", configuration = "transformProductionForge")) { isTransitive = false }
 }
 
-val javaComponent = components["java"] as AdhocComponentWithVariants
+val javaComponent = components.getByName<AdhocComponentWithVariants>("java")
 javaComponent.withVariantsFromConfiguration(configurations["sourcesElements"]) {
     skip()
 }

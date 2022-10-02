@@ -23,7 +23,7 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             artifactId = rootProject.property("archives_base_name").toString()
-            from(components.getByName("java"))
+            from(components.getByName<AdhocComponentWithVariants>("java"))
         }
     }
 
