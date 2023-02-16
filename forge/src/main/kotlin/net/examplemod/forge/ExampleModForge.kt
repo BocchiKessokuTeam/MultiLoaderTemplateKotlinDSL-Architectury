@@ -6,15 +6,15 @@ import net.examplemod.ExampleMod.init
 import net.examplemod.forge.datagen.ChineseProvider
 import net.minecraftforge.data.event.GatherDataEvent
 import net.minecraftforge.fml.common.Mod
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
+import thedarkcolour.kotlinforforge.forge.MOD_CONTEXT
 
 
 @Mod(ExampleMod.MOD_ID)
 class ExampleModForge {
     init {
         // Submit our event bus to let architectury register our content on the right time
-        EventBuses.registerModEventBus(ExampleMod.MOD_ID, FMLJavaModLoadingContext.get().modEventBus)
-        FMLJavaModLoadingContext.get().modEventBus.addListener(this::onGatherData)
+        EventBuses.registerModEventBus(ExampleMod.MOD_ID, MOD_CONTEXT.getKEventBus())
+        MOD_CONTEXT.getKEventBus().addListener(this::onGatherData)
         init()
     }
 
