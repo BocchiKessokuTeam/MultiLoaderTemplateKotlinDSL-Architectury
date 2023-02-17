@@ -41,7 +41,7 @@ dependencies {
 
     common(project(":common", configuration = "namedElements")) { isTransitive = false }
     shadowCommon(project(":common", configuration = "transformProductionQuilt")) { isTransitive = false }
-    common(kotlin("stdlib-jdk8"))
+    modImplementation("org.quiltmc.quilt-kotlin-libraries:quilt-kotlin-libraries:${rootProject.property("quilt_kotlin_libraries_version")}")
 }
 
 val javaComponent = components.getByName<AdhocComponentWithVariants>("java")

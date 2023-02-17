@@ -53,7 +53,7 @@ dependencies {
     modApi("dev.architectury:architectury-forge:${rootProject.property("architectury_version")}")
     common(project(":common", configuration = "namedElements")) { isTransitive = false }
     shadowCommon(project(":common", configuration = "transformProductionForge")) { isTransitive = false }
-    common(kotlin("stdlib-jdk8"))
+    implementation("thedarkcolour:kotlinforforge:${rootProject.property("kotlinforforge_version")}")
 }
 
 repositories {
