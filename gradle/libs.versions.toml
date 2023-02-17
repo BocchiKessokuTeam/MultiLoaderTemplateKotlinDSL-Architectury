@@ -3,7 +3,6 @@ kotlin = "1.7.0"
 minecraft = "1.19.2"
 architectury = "6.2.43"
 forge = "1.19.2-43.0.8"
-# https://github.com/thedarkcolour/KotlinForForge/blob/4.x/README.md
 kotlinforforge = "3.9.1"
 fabric_loader = "0.14.9"
 fabric_api = "0.59.0+1.19.2"
