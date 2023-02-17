@@ -48,12 +48,12 @@ configurations {
 }
 
 dependencies {
-    forge("net.minecraftforge:forge:${rootProject.property("forge_version")}")
+    forge(libs.forge)
     // Remove the next line if you don't want to depend on the API
-    modApi("dev.architectury:architectury-forge:${rootProject.property("architectury_version")}")
+    modApi(libs.architectury.forge)
     common(project(":common", configuration = "namedElements")) { isTransitive = false }
     shadowCommon(project(":common", configuration = "transformProductionForge")) { isTransitive = false }
-    implementation("thedarkcolour:kotlinforforge:${rootProject.property("kotlinforforge_version")}")
+    implementation(libs.kotlinforforge)
 }
 
 repositories {

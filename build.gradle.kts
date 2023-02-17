@@ -25,12 +25,12 @@ subprojects {
         }
     }
     dependencies {
-        "minecraft"("com.mojang:minecraft:${project.property("minecraft_version")}")
+        "minecraft"(rootProject.project.libs.minecraft)
         // The following line declares the mojmap mappings, you may use other mappings as well
         "mappings"(
             loom.layered {
                 officialMojangMappings()
-                parchment("org.parchmentmc.data:parchment-${property("minecraft_version")}:${property("parchment_version")}@zip")
+                parchment("org.parchmentmc.data:parchment-${property("minecraft_version")}:${property("parchment_version")}")
             }
         )
         // The following line declares the yarn mappings you may select this one as well.
@@ -58,7 +58,7 @@ allprojects {
     }
 
     dependencies {
-        "compileClasspath"("org.jetbrains.kotlin:kotlin-gradle-plugin:${property("kotlin_version")}")
+        "compileClasspath"(rootProject.project.libs.kotlinGradlePlugin)
     }
 
     tasks.withType<JavaCompile> {

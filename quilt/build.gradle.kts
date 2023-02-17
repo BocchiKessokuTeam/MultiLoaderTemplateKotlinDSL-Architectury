@@ -30,10 +30,10 @@ configurations {
 }
 
 dependencies {
-    modImplementation("org.quiltmc:quilt-loader:${rootProject.property("quilt_loader_version")}")
-    modApi("org.quiltmc.quilted-fabric-api:quilted-fabric-api:${rootProject.property("quilt_fabric_api_version")}")
+    modImplementation(libs.quilt.loader)
+    modApi(libs.quilt.fabricApi)
     // Remove the next few lines if you don't want to depend on the API
-    modApi("dev.architectury:architectury-fabric:${rootProject.property("architectury_version")}") {
+    modApi(libs.architectury.fabric) {
         // We must not pull Fabric Loader from Architectury Fabric
         exclude(group = "net.fabricmc")
         exclude(group = "net.fabricmc.fabric-api")
@@ -41,7 +41,7 @@ dependencies {
 
     common(project(":common", configuration = "namedElements")) { isTransitive = false }
     shadowCommon(project(":common", configuration = "transformProductionQuilt")) { isTransitive = false }
-    modImplementation("org.quiltmc.quilt-kotlin-libraries:quilt-kotlin-libraries:${rootProject.property("quilt_kotlin_libraries_version")}")
+    modImplementation(libs.quilt.kotlinLibraries)
 }
 
 val javaComponent = components.getByName<AdhocComponentWithVariants>("java")

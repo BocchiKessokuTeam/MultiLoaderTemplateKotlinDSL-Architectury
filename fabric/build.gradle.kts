@@ -24,14 +24,14 @@ configurations {
 }
 
 dependencies {
-    modImplementation("net.fabricmc:fabric-loader:${rootProject.property("fabric_loader_version")}")
-    modApi("net.fabricmc.fabric-api:fabric-api:${rootProject.property("fabric_api_version")}")
+    modImplementation(libs.fabric.loader)
+    modApi(libs.fabric.api)
     // Remove the next line if you don't want to depend on the API
-    modApi("dev.architectury:architectury-fabric:${rootProject.property("architectury_version")}")
+    modApi(libs.architectury.fabric)
 
     common(project(":common", configuration = "namedElements")) { isTransitive = false }
     shadowCommon(project(":common", configuration = "transformProductionFabric")) { isTransitive = false }
-    modImplementation(group = "net.fabricmc", name = "fabric-language-kotlin", version = "1.8.0+kotlin.1.7.0")
+    modImplementation(libs.fabric.languageKotlin)
 
 }
 
